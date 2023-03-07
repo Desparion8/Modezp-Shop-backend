@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
-import cors from 'cors';
+const cors = require('cors');
 
 import productRoutes from './routes/productsRoutes.js';
 import userRoutes from './routes/usersRoutes.js';
@@ -16,8 +16,9 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
 app.use(cors());
+
+
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'development') {
