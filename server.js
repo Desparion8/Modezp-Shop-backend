@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
-const cors = require('cors');
+import cors from 'cors';
 
 import productRoutes from './routes/productsRoutes.js';
 import userRoutes from './routes/usersRoutes.js';
@@ -17,7 +17,6 @@ connectDB();
 
 const app = express();
 app.use(cors());
-
 
 app.use(express.json());
 
